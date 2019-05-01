@@ -1,16 +1,26 @@
 <template>
   <div id="app">
-    <HelloWorld msg="hi" />
+    <EditableForm msg="Editable form">
+      <EditableTextbox label="textbox1" v-model="textbox1"/>
+      <EditableTextbox label="textbox2" v-model="textbox2"/>
+      <pre>{{textbox1 + " " + textbox2 }}</pre>
+    </EditableForm>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import EditableForm from "./components/EditableForm";
+import EditableTextbox from "./components/EditableTextbox";
 
 export default {
   name: "App",
+  data: function() {
+    return { textbox1: "Hello", textbox2: "World" };
+  },
+  computed: {},
   components: {
-    HelloWorld
+    EditableForm,
+    EditableTextbox
   }
 };
 </script>
